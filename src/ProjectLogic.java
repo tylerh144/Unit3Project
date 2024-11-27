@@ -39,8 +39,8 @@ public class ProjectLogic {
             System.out.println("Alright");
         }
 
-        int choice = 0;
-        while (choice != 5) {
+        String choice = "";
+        while (!choice.equals("5")) {
             System.out.println("\n*********** Menu ***********");
             System.out.println("1. Play");
             System.out.println("2. Change mode");
@@ -49,23 +49,22 @@ public class ProjectLogic {
             System.out.println("5. Exit");
             System.out.println("****************************");
             System.out.print("Enter option: ");
-            choice = scan.nextInt();
-            scan.nextLine();
+            choice = scan.nextLine();
 
-            if (choice == 1) {
+            if (choice.equals("1")) {
                 String again = "y";
                 while (again.equals("y")) {
                     play();
                     System.out.print("Play again? (y/n) ");
                     again = scan.nextLine();
                 }
-            } else if (choice == 2) {
+            } else if (choice.equals("2")) {
                 changeMode();
-            } else if (choice == 3) {
+            } else if (choice.equals("3")) {
                 changeLength();
-            } else if (choice == 4) {
+            } else if (choice.equals("4")) {
                 changeKeys();
-            } else if (choice != 5){
+            } else if (!choice.equals("5")){
                 System.out.println("Invalid input");
             }
         }
